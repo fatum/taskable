@@ -16,7 +16,7 @@ class Task < ActiveRecord::Base
     state :failed
 
     event :start do
-      transition [:pending, :enqueud] => :working
+      transition [:pending, :enqueud, :failed] => :working
     end
 
     event :enqueud do
