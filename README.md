@@ -26,6 +26,7 @@ That task example could be started sequentialy by TaskRunner using `rake task:al
 class Task::MutateCampaign < Task
   def call
     # Business Logic
+    CampaignMutator.call(campaign: taskable)
   end
 end
 
