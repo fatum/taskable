@@ -34,6 +34,6 @@ class Task < ActiveRecord::Base
 
   def attempt!
     update_attribute(:attempts, attempts + 1)
-    start
+    start!
   end
 end
