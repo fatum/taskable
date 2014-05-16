@@ -39,8 +39,8 @@ Taskable.populate = proc { |task|
 }
 ```
 
-It increase attempts, update status to :enqueued and produce each task to callable object (Taskable.populate).
-Each task should be runned by TaskRunner (for state handling).
+It update status to :enqueued and produce each task to callable object (Taskable.populate).
+Each task should be runned by TaskRunner (for error handling and state transitions).
 
 ```ruby
 def perform(task_id)
