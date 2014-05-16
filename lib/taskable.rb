@@ -1,7 +1,8 @@
 require "taskable/version"
+require 'active_support'
 
 module Taskable
-  require 'taskable/railtie'
+  require 'taskable/railtie' if defined?(Rails)
   require 'taskable/task_runner'
 
 
