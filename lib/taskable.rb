@@ -4,6 +4,11 @@ require 'active_record'
 require 'state_machine'
 
 module Taskable
+  begin
+    require "rails/observers/activerecord/active_record"
+  rescue LoadError
+  end
+
   if defined?(Rails)
     require 'taskable/railtie'
   else
