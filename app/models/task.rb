@@ -20,7 +20,7 @@ class Task < ActiveRecord::Base
     end
 
     event :enqueud do
-      transition :pending => :enqueud
+      transition [:pending, :failed] => :enqueud
     end
 
     event :crash do
