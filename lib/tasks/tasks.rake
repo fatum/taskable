@@ -1,8 +1,8 @@
 namespace :task do
   desc 'Run task populator'
-  task :populator => :environment do
+  task :schedule => :environment do
     Task.available.find_each do |task|
-      task.attempt!
+      task.enqueued!
 
       Taskable.populate.call(task)
     end

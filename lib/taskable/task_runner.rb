@@ -8,7 +8,7 @@ class Taskable::TaskRunner
   # Usage:
   #   TaskRunner.new(task: task).run { |t| t.call }
   def run(&block)
-    task.attempt! if !task.working? # task can be enqueued to Message Queue
+    task.attempt!
 
     yield task
     task.succeed!

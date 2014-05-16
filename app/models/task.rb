@@ -10,20 +10,25 @@ class Task < ActiveRecord::Base
 
   state_machine :status, :initial => :pending do
     state :pending
+    state :enqueued
     state :working
     state :successful
     state :failed
 
     event :start do
-      transition all => :working
+      transition [:pending, :enqueud] => :working
+    end
+
+    event :enqueud do
+      transition :pending => :enqueud
     end
 
     event :crash do
-      transition all => :failed
+      transition :working => :failed
     end
 
     event :succeed do
-      transition all => :successful
+      transition :working => :successful
     end
   end
 
