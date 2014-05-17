@@ -1,5 +1,7 @@
 # Taskable
 
+[![Code Climate](https://codeclimate.com/github/fatum/taskable.png)](https://codeclimate.com/github/fatum/taskable)
+
 TODO: Write a gem description
 
 ## Installation
